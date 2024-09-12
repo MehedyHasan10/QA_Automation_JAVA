@@ -34,4 +34,3 @@ public class FileUploadTest extends BaseTest {
         Assert.assertEquals(uploadedFileName, FILE_NAME, "Uploaded file name does not match the expected file name");
     }
 }
-//-------

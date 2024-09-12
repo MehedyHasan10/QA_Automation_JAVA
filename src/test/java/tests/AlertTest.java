@@ -27,4 +27,4 @@ public class AlertTest extends BaseTest {
         Assert.assertEquals(actualMessage, expectedMessage, "Success message is not displayed as expected");
     }
 }
-//-----
+
