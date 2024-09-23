@@ -9,31 +9,24 @@ import java.util.List;
 
 public class DataTableTests extends BaseTest {
 
-    private final By DATA_TABLES = By.xpath(String.format(PRECISE_TEXT_XPATH, "Sortable Data Tables"));
-    private final By COLUMN_VALUES = By.xpath("//table[@id='table1']//tbody//tr//td[4]");
-    private final Double EXPECTED_SUM = 251.0;
-    private final String CURRENCY_REGEX = "[^\\d.]";
+    private final By dataTables = By.xpath(String.format(PRECISE_TEXT_XPATH, "Sortable Data Tables"));
+    private final By columnValues = By.xpath("//table[@id='table1']//tbody//tr//td[4]");
+    private final Double expectedSum = 251.0;
+    private final String currencyRegex = "[^\\d.]";
 
     @Test
     public void dataTableTests() {
-        driver.findElement(DATA_TABLES).click();
-        List<WebElement> duelist = driver.findElements(COLUMN_VALUES);
+        driver.findElement(dataTables).click();
+        List<WebElement> duelist = driver.findElements(columnValues);
         Double actualSum = 0.0;
-
-        // Calculate the sum of the values in the column
+        
         for (WebElement element : duelist) {
-            String elementText = element.getText().trim(); // Trim any extra spaces
+            String elementText = element.getText().trim();
             if (!elementText.isEmpty()) {
-                actualSum += Double.parseDouble(elementText.replaceAll(CURRENCY_REGEX, ""));
+                actualSum += Double.parseDouble(elementText.replaceAll(currencyRegex, ""));
             }
         }
-
-        // For debugging purposes
-       // System.out.println("Calculated sum: " + actualSum);
-
-        // Assert that the actual sum matches the expected sum
-        Assert.assertEquals(actualSum, EXPECTED_SUM, "Sum is not correct");
+        
+        Assert.assertEquals(actualSum,expectedSum, "Sum is not correct");
     }
 }
-
-

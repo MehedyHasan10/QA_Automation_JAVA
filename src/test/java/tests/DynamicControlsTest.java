@@ -10,34 +10,24 @@ import java.util.UUID;
 
 public class DynamicControlsTest extends BaseTest {
 
-    private final By DYNAMIC_CONTROL = By.xpath(String.format(PRECISE_TEXT_XPATH, "Dynamic Controls"));
-    private final By ENABLE = By.xpath("//*[@id=\"input-example\"]/button");
-    private final By INPUT = By.xpath("//*[@id=\"input-example\"]/input");
-
-    // Generate a random text string using UUID for testing input
-    private final String RANDOM_TEXT = UUID.randomUUID().toString();
+    private final By dynamicControl = By.xpath(String.format(PRECISE_TEXT_XPATH, "Dynamic Controls"));
+    private final By enable = By.xpath("//*[@id=\"input-example\"]/button");
+    private final By input = By.xpath("//*[@id=\"input-example\"]/input");
+    private final String randomText = UUID.randomUUID().toString();
 
     @Test
     public void dynamicControlsTest() {
-
-        driver.findElement(DYNAMIC_CONTROL).click();
-        driver.findElement(ENABLE).click();
-
-        // Find the input field element
-        WebElement inputField = driver.findElement(INPUT);
-
-        // Wait until the input field is clickable, then verify it is enabled
+        driver.findElement(dynamicControl).click();
+        driver.findElement(enable).click();
+        
+        WebElement inputField = driver.findElement(input);
         Assert.assertTrue(isClickable(inputField), "Element wasn't enabled");
-
-        // Enter the random text into the input field
-        inputField.sendKeys(RANDOM_TEXT);
-
-        // Assert that the input field contains the entered text
-        Assert.assertEquals(driver.findElement(INPUT).getAttribute("value"), RANDOM_TEXT,
+        
+        inputField.sendKeys(randomText);
+        Assert.assertEquals(driver.findElement(input).getAttribute("value"),randomText,
                 "Text is not displayed");
     }
-
-    // Utility method to check if an element is clickable
+    
     private boolean isClickable(WebElement element) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -47,4 +37,3 @@ public class DynamicControlsTest extends BaseTest {
         return true;
     }
 }
-
