@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 public class IframesTest extends BaseTest {
     protected static final String URL = "https://practice-automation.com/iframes/";
+    private final By iFrame = By.xpath("//iframe[@id='iframe-1']");
     private final By automateNowLogo = By.xpath("//img[@alt='automateNow Logo']");
     private final By playwrightLogo = By.xpath("//img[@alt='Playwright logo']");
     private final By mainPageHeader = By.xpath("//h1[@itemprop='headline']");
@@ -23,7 +24,7 @@ public class IframesTest extends BaseTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(mainPageHeader));
         Assert.assertTrue(driver.findElement(mainPageHeader).isDisplayed(), "Main page is not displayed.");
 
-        driver.switchTo().frame(0);
+        driver.switchTo().frame(driver.findElement(iFrame));
         Assert.assertTrue(driver.findElement(playwrightLogo).isDisplayed(), "Playwright logo is not displayed.");
 
         driver.switchTo().defaultContent();
