@@ -1,0 +1,23 @@
+{
+  "protocol": "https",
+  "domain": "accuweather.com",
+  "wait": 30,
+  "host": "https://www.accuweather.com/"
+}
+
+
+{
+  "protocol": "https",
+  "domain": "wikipedia.org",
+  "wait": 30,
+  "host": "https://www.wikipedia.org/"
+}
+
+
+
+{
+  "protocol": "https",
+  "domain": "practice-automation.com/iframes",
+  "wait": 30,
+  "host": "https://practice-automation.com/iframes"
+}
