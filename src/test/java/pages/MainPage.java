@@ -4,6 +4,7 @@ import aquality.selenium.browser.AqualityServices;
 import aquality.selenium.elements.interfaces.ILink;
 import aquality.selenium.forms.Form;
 import constants.LocatorConstants;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public class MainPage extends Form {
@@ -17,6 +18,7 @@ public class MainPage extends Form {
                 navigation)), navigation);
     }
 
+    @Step("Navigating to the page {0}")
     public void clickNavigationLink(String navigation) {
         getNavigationLink(navigation).click();
     }

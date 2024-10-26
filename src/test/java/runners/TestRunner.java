@@ -5,12 +5,14 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        // todo: add options
+        features = {"C:\\Users\\Admin\\Desktop\\QA\\unit_5\\unit_5_practices\\src\\test\\java\\features"}
+        ,glue={"stepdefinitions", "hooks"}
+        ,plugin = {"pretty"}
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
     @Override
-    @DataProvider(parallel = true)
+    @DataProvider(parallel = false)
     public Object[][] scenarios() {
         return super.scenarios();
     }

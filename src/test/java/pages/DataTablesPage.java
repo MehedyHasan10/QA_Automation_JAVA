@@ -5,6 +5,7 @@ import aquality.selenium.elements.ElementType;
 import aquality.selenium.elements.interfaces.ILabel;
 import aquality.selenium.forms.Form;
 import constants.LocatorConstants;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class DataTablesPage extends Form {
         super(By.xpath(String.format(LocatorConstants.PRECISE_TEXT_XPATH, NAME)), NAME);
     }
 
+    @Step("Getting the values of dueList")
     public List<String> getFirstDueList() {
         List<String> dueList = new ArrayList<>();
 
