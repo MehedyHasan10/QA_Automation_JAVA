@@ -9,6 +9,8 @@ public enum MainPageNavigation {
     MULTIPLE_WINDOWS("Multiple Windows"),
     FILE_DOWNLOAD("File Download"),
     FILE_UPLOAD("File Upload"),
+    CHECK_BOXES("Checkboxes"),
+    Drop_Down("Dropdown"),
     BASIC_AUTH("Basic Auth");
     
     private final String label;
