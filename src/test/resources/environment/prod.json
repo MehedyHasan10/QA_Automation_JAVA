@@ -1,6 +1,4 @@
 {
-  "protocol": "https",
-  "domain": "accuweather.com",
   "wait": 30,
-  "host": "https://www.accuweather.com/"
+  "host": "https://the-internet.herokuapp.com"
 }

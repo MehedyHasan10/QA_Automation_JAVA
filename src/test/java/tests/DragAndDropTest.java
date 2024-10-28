@@ -17,5 +17,6 @@ public class DragAndDropTest extends BaseTest{
         
         Assert.assertEquals("B", actualTextColumnA,"Column B has not been successfully dragged to Column A!");
         Assert.assertEquals("A", actualTextColumnB,"Column A has not been successfully dragged to Column B!");
+        
     }
 }

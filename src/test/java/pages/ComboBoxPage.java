@@ -1,25 +1,19 @@
 package pages;
 
-import aquality.selenium.browser.AqualityServices;
 import aquality.selenium.elements.interfaces.IButton;
 import aquality.selenium.elements.interfaces.IComboBox;
-import aquality.selenium.elements.interfaces.IElementFactory;
 import aquality.selenium.forms.Form;
 import org.openqa.selenium.By;
 
 public class ComboBoxPage extends Form {
-    private final IElementFactory elementFactory = AqualityServices.getElementFactory();
-    private final By dropDownButton = By.xpath("//a[@href='/dropdown']");
-    private final By comboBoxButton = By.xpath("//select[@id='dropdown']");
-    
-    private final IButton clickForDropDownBtn = elementFactory.getButton(dropDownButton,"Click Drop Down Button");
-    private final IComboBox clickForComboBoxBtn = elementFactory.getComboBox(comboBoxButton,"Click Combo Box");
-    
-    public ComboBoxPage(){
+    private final IButton clickForDropDownBtn = getElementFactory().getButton(By.xpath("//a[@href='/dropdown']"), "Click Drop Down Button");
+    private final IComboBox clickForComboBoxBtn = getElementFactory().getComboBox(By.xpath("//select[@id='dropdown']"), "Click Combo Box");
+
+    public ComboBoxPage() {
         super(By.xpath("//body"), "Internet Herokuapp Page");
     }
-    
-    public void clickDripDownButton(){
+
+    public void clickDropDownButton() {
         clickForDropDownBtn.click();
     }
 

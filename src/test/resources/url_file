@@ -5,7 +5,6 @@
   "host": "https://www.accuweather.com/"
 }
 
-
 {
   "protocol": "https",
   "domain": "wikipedia.org",
@@ -13,11 +12,16 @@
   "host": "https://www.wikipedia.org/"
 }
 
-
-
 {
   "protocol": "https",
   "domain": "practice-automation.com/iframes",
   "wait": 30,
   "host": "https://practice-automation.com/iframes"
+}
+
+{
+  "protocol": "https",
+  "domain": "the-internet.herokuapp.com",
+  "wait": 30,
+  "host": "https://the-internet.herokuapp.com"
 }

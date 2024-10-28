@@ -1,8 +1,6 @@
 package pages;
 
-import aquality.selenium.browser.AqualityServices;
 import aquality.selenium.elements.interfaces.IButton;
-import aquality.selenium.elements.interfaces.IElementFactory;
 import aquality.selenium.elements.interfaces.ILabel;
 import aquality.selenium.elements.interfaces.ITextBox;
 import aquality.selenium.forms.Form;
@@ -11,15 +9,11 @@ import org.openqa.selenium.By;
 import java.util.List;
 
 public class FindElementsPage extends Form {
-    private final IElementFactory elementFactory = AqualityServices.getElementFactory();
-    private final By consentButton = By.xpath("//div[contains(@class,'banner-button policy-accept')]");
-    private final By searchField = By.xpath("//input[contains(@class,'search-input')]");
+    private final IButton policyButtonSubmit = getElementFactory().getButton(By.xpath("//div[contains(@class,'banner-button policy-accept')]"), "Submit Policy");
+    private final ITextBox textNameInput = getElementFactory().getTextBox(By.xpath("//input[contains(@class,'search-input')]"), "Search Field");
+    private final ILabel header =getElementFactory().getLabel(By.xpath("//h1[contains(@class,'header-loc')]"), "City Header");
     private final By searchResultsList = By.xpath("//p[contains(@class,'search-bar-result__name')]");
-    private final By cityHeader = By.xpath("//h1[contains(@class,'header-loc')]");
-
-    private final IButton policyButtonSubmit = elementFactory.getButton(consentButton, "Submit Policy");
-    private final ITextBox textNameInput = elementFactory.getTextBox(searchField, "Search Field");
-    private final ILabel header = elementFactory.getLabel(cityHeader, "City Header");
+    
     
     public FindElementsPage(){
         super(By.xpath("//div[contains(@class,'banner-button policy-accept')]"), "AccuWeather Page");
@@ -37,7 +31,7 @@ public class FindElementsPage extends Form {
     }
     
     public List<ITextBox> getSearchResults() {
-        return elementFactory.findElements(searchResultsList, ITextBox.class);
+        return getElementFactory().findElements(searchResultsList, ITextBox.class);
     }
 
     public void clickFirstSearchResult() {

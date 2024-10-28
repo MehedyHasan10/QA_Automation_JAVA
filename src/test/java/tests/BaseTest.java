@@ -6,8 +6,6 @@ import utils.SettingsTestData;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import java.time.Duration;
-
 import static aquality.selenium.browser.AqualityServices.getBrowser;
 
 public abstract class BaseTest {
@@ -17,7 +15,6 @@ public abstract class BaseTest {
     public void setup() {
         browser = getBrowser();
         browser.maximize();
-        browser.setPageLoadTimeout(Duration.ofSeconds(SettingsTestData.getEnvData().getWait()));
         browser.goTo(SettingsTestData.getEnvData().getHost());
     }
 

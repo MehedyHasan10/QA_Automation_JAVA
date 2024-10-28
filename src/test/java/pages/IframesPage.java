@@ -1,7 +1,5 @@
 package pages;
 
-import aquality.selenium.browser.AqualityServices;
-import aquality.selenium.elements.interfaces.IElementFactory;
 import aquality.selenium.elements.interfaces.ILabel;
 import aquality.selenium.forms.Form;
 import org.openqa.selenium.By;
@@ -9,13 +7,11 @@ import org.openqa.selenium.By;
 import static aquality.selenium.browser.AqualityServices.getBrowser;
 
 public class IframesPage extends Form {
-    private final IElementFactory elementFactory = AqualityServices.getElementFactory();
-    private final ILabel mainPageHeader = elementFactory.getLabel(By.xpath("//h1[@itemprop='headline']"), "Main Page Header");
-    private final ILabel automateNowLogo = elementFactory.getLabel(By.xpath("//img[@alt='automateNow Logo']"), "AutomateNow Logo");
-    private final ILabel playwrightLogo = elementFactory.getLabel(By.xpath("//img[@alt='Playwright logo']"), "Playwright Logo");
+    private final ILabel mainPageHeader = getElementFactory().getLabel(By.xpath("//h1[@itemprop='headline']"), "Main Page Header");
+    private final ILabel automateNowLogo = getElementFactory().getLabel(By.xpath("//img[@alt='automateNow Logo']"), "AutomateNow Logo");
+    private final ILabel playwrightLogo = getElementFactory().getLabel(By.xpath("//img[@alt='Playwright logo']"), "Playwright Logo");
     private final By iFrameLocator = By.xpath("//iframe[@id='iframe-1']");
     
-
     public IframesPage() {
         super(By.xpath("//body"), "Iframes Page");
     }

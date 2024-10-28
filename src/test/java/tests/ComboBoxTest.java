@@ -10,7 +10,7 @@ public class ComboBoxTest extends BaseTest {
 
     @Test
     public void dropDownTest() {
-        comboBoxPage.clickDripDownButton();
+        comboBoxPage.clickDropDownButton();
         comboBoxPage.selectComboBoxOptionByText(optionText);
         String selectedOption = comboBoxPage.getSelectedOptionText();
         Assert.assertEquals(selectedOption, optionText, "The selected option should not Match");

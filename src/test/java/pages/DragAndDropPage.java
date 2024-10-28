@@ -11,15 +11,12 @@ import org.openqa.selenium.interactions.Actions;
 import static aquality.selenium.browser.AqualityServices.getBrowser;
 
 public class DragAndDropPage extends Form {
-    private final IElementFactory elementFactory = AqualityServices.getElementFactory();
+    private final ILabel columnA = getElementFactory().getLabel(By.id("column-a"), "Column A");
+    private final ILabel columnB = getElementFactory().getLabel(By.id("column-b"), "Column B");
     private final By dragAndDropLink = By.xpath("//a[@href='/drag_and_drop']");
-    private final By firstColumnA = By.id("column-a");
-    private final By secondColumnB = By.id("column-b");
-
-    private final ILabel columnA = elementFactory.getLabel(firstColumnA, "Column A");
-    private final ILabel columnB = elementFactory.getLabel(secondColumnB, "Column B");
     private static final String clickScript = "arguments[0].click();";
 
+    
     public DragAndDropPage() {
         super(By.xpath("//body"), "Internet Herokuapp Page");
     }
