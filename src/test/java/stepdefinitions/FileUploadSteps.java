@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.testng.Assert;
 import pages.FileUploadPage;
+import pages.FileUploadSuccessfulPage;
 import utils.SettingsTestData;
 
 import java.io.File;
@@ -12,6 +13,7 @@ import static io.qameta.allure.Allure.step;
 
 public class FileUploadSteps {
     private final FileUploadPage fileUploadPage = new FileUploadPage();
+    private final FileUploadSuccessfulPage fileUploadSuccessfulPage = new FileUploadSuccessfulPage();
     private final String fileName = SettingsTestData.getFileData().getUploadFile();
     private final String filePath = SettingsTestData.RESOURCES_PATH + fileName;
     private final File file = new File(filePath);
@@ -30,7 +32,7 @@ public class FileUploadSteps {
 
     @Then("the uploaded file name should be {string}")
     public void theUploadedFileNameShouldBe(String expectedFileName) {
-        Assert.assertEquals(fileUploadPage.getUploadedFileName(), expectedFileName, "File name is not correct or missed.");
+        Assert.assertEquals(fileUploadSuccessfulPage.getUploadedFileName(), expectedFileName, "File name is not correct or missed.");
         step("Verify the uploaded file name matches");
     }
 }

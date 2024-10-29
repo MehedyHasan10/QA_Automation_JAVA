@@ -10,7 +10,9 @@ public enum MainPageNavigation {
     FILE_DOWNLOAD("File Download"),
     FILE_UPLOAD("File Upload"),
     CHECK_BOXES("Checkboxes"),
-    Drop_Down("Dropdown"),
+    DROP_DOWN("Dropdown"),
+    DRAG_DROP("Drag and Drop"),
+    DYNAMIC_CONTROL("Dynamic Controls"),
     BASIC_AUTH("Basic Auth");
     
     private final String label;

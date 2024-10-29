@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        features = {"C:\\Users\\Admin\\Desktop\\QA\\unit_5\\unit_5_practices\\src\\test\\java\\features"}
+        features = {"src\\test\\java\\features"}
         ,glue={"stepdefinitions", "hooks"}
         ,plugin = {"pretty"}
 )

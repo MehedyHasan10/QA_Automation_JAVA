@@ -11,13 +11,14 @@ import static io.qameta.allure.Allure.step;
 
 public class BasicAuthSteps {
     private final BasicAuthPage basicAuthPage = new BasicAuthPage();
-    
+
     @When("I provide valid credentials")
-    public void iProvideValidCredentials() {
+    public void iProvideValidCredentialsForBasicAuth() {
         getBrowser().network().addBasicAuthentication(
-                SettingsTestData.getEnvData().getHost(),
-                SettingsTestData.getUserData().getUsername(), 
-                SettingsTestData.getUserData().getPassword());
+                SettingsTestData.getEnvData().getDomain(),
+                SettingsTestData.getUserData().getUsername(),
+                SettingsTestData.getUserData().getPassword()
+        );
         step("Provide valid credentials for Basic Authentication");
     }
 
