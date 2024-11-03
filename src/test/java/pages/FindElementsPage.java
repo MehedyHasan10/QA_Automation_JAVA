@@ -11,37 +11,44 @@ import java.util.List;
 public class FindElementsPage extends Form {
     private final IButton policyButtonSubmit = getElementFactory().getButton(By.xpath("//div[contains(@class,'banner-button policy-accept')]"), "Submit Policy");
     private final ITextBox textNameInput = getElementFactory().getTextBox(By.xpath("//input[contains(@class,'search-input')]"), "Search Field");
-    private final ILabel header =getElementFactory().getLabel(By.xpath("//h1[contains(@class,'header-loc')]"), "City Header");
-    private final By searchResultsList = By.xpath("//p[contains(@class,'search-bar-result__name')]");
-    
-    
+    private final ILabel header =getElementFactory().getLabel(By.xpath("//h1[@class='header-loc']"), "City Header");
+    private final ILabel searchResultsList = getElementFactory().getLabel(By.xpath("//div[@class='results-container']"),"Result List");
+  private final By searchResultContainer = By.xpath("//div[@class='results-container']//div");
+  
+  
     public FindElementsPage(){
         super(By.xpath("//div[contains(@class,'banner-button policy-accept')]"), "AccuWeather Page");
     }
 
     public void acceptConsentPolicy() {
-        if (policyButtonSubmit.state().isDisplayed()) {
-            policyButtonSubmit.click();
-        }
+        policyButtonSubmit.click();
     }
 
     public void searchForCity(String cityName) {
         textNameInput.clearAndType(cityName);
-        textNameInput.submit();
+    }
+
+    public boolean waitForResultDisplayed() {
+        return searchResultsList.state().waitForDisplayed();
     }
     
-    public List<ITextBox> getSearchResults() {
-        return getElementFactory().findElements(searchResultsList, ITextBox.class);
+    private List<ITextBox> getSearchResults() {
+        return getElementFactory().findElements(searchResultContainer, ITextBox.class);
     }
 
     public void clickFirstSearchResult() {
-        List<ITextBox> results = getSearchResults();
-        if (!results.isEmpty()) {
-            results.get(0).click();
-        }
+        getSearchResults().get(0).click();
+
     }
 
     public boolean isCityHeaderDisplayed() {
-        return header.state().isDisplayed();
+        return header.state().waitForDisplayed();
     }
+
 }
+
+
+
+
+
+

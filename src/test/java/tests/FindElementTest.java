@@ -11,8 +11,8 @@ public class FindElementTest extends BaseTest{
     public void testFindElements() {
         findElementsPage.acceptConsentPolicy();
         findElementsPage.searchForCity("New York");
-        browser.waitForPageToLoad();
+        Assert.assertTrue(findElementsPage.waitForResultDisplayed(), "Search results list is not displayed.");
         findElementsPage.clickFirstSearchResult();
-        Assert.assertTrue(findElementsPage.isCityHeaderDisplayed(), "City header is not displayed.");
+        Assert.assertTrue(findElementsPage.isCityHeaderDisplayed(), "Header is not displayed.");
     }
 }

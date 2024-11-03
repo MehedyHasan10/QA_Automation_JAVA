@@ -3,6 +3,7 @@ package pages;
 import aquality.selenium.elements.interfaces.ILabel;
 import aquality.selenium.forms.Form;
 import org.openqa.selenium.By;
+import utils.BrowserUtils;
 
 import static aquality.selenium.browser.AqualityServices.getBrowser;
 
@@ -29,10 +30,6 @@ public class IframesPage extends Form {
     }
 
     public void switchToIframe() {
-        getBrowser().getDriver().switchTo().frame(getBrowser().getDriver().findElement(iFrameLocator));
-    }
-
-    public void switchToDefaultContent() {
-        getBrowser().getDriver().switchTo().defaultContent();
+        BrowserUtils.switchIFrame(iFrameLocator);
     }
 }

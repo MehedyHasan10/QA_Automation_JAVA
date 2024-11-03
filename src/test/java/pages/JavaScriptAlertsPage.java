@@ -25,5 +25,5 @@ public class JavaScriptAlertsPage extends Form {
 
     public boolean isPromptSuccessMessageDisplayed(String expectedText) {
         return resultLabel.getText().equals(expectedText);
-    }
+    } 
 }
