@@ -43,6 +43,11 @@ public class RecentPageSteps {
         recentLocationPage.forRecentLocation();
     }
 
+    @Then("If I see the google ads")
+    public void isClickAddCrossBtn(){
+        recentLocationPage.forIframeAndAdCloseButtonIfVisible();
+    }
+
     @Then ("City weather page header contains city name from the search")
     public void isSeeCityHeaderDisplayed() {
         Assert.assertTrue(recentLocationPage.isCityHeaderDisplayed(), "Header is not displayed.");

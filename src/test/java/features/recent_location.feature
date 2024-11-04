@@ -6,4 +6,5 @@ Feature: Recent Locations
     And I select the first result
     Then Back to main page
     Then I click the recent location
+    Then If I see the google ads
     Then City weather page header contains city name from the search
