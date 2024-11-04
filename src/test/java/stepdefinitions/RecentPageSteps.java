@@ -17,7 +17,7 @@ public class RecentPageSteps {
 
 
     @Given("I search recent location")
-    public void iSearchForCity() {
+    public void isSearchForCity() {
         mainPage.searchForCity(cityName);
     }
 
@@ -27,7 +27,7 @@ public class RecentPageSteps {
     }
 
     @When("I select the first result")
-    public void iSelectTheFirstSearchResult() {
+    public void isSelectTheFirstSearchResult() {
         mainPage.clickFirstSearchResult();
     }
     
@@ -44,7 +44,7 @@ public class RecentPageSteps {
     }
 
     @Then ("City weather page header contains city name from the search")
-    public void iSSeeCityHeaderDisplayed() {
+    public void isSeeCityHeaderDisplayed() {
         Assert.assertTrue(recentLocationPage.isCityHeaderDisplayed(), "Header is not displayed.");
     }
 }

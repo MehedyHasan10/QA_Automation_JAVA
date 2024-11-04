@@ -14,7 +14,7 @@ public class LocationLabelSteps {
     }
 
     @Then("I should see the Use your current location label displayed")
-    public void iSSeeTheCityHeaderDisplayed() {
+    public void isSeeTheCityHeaderDisplayed() {
         Assert.assertTrue(locationLabelPage.isLocationLabelDisplayed(), "Current Location Label is not displayed.");
     }
 }

@@ -13,7 +13,7 @@ public class SearchCitySteps {
     private final String cityName = SettingsTestData.getSearchData().getSearchCity();
     
     @When("I search City")
-    public void iSearchForCity() {
+    public void isSearchForCity() {
         mainPage.searchForCity(cityName);
     }
     
@@ -23,12 +23,12 @@ public class SearchCitySteps {
     }
 
     @When("I select the first search result")
-    public void iSelectTheFirstSearchResult() {
+    public void isSelectTheFirstSearchResult() {
         mainPage.clickFirstSearchResult();
     }
 
     @Then("I should see the city header displayed")
-    public void iSSeeTheCityHeaderDisplayed() {
+    public void isSeeTheCityHeaderDisplayed() {
         Assert.assertTrue(searchCityPage.isCityHeaderDisplayed(), "City header is not displayed.");
     }
 }
