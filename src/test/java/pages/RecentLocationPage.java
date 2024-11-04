@@ -29,7 +29,7 @@ public class RecentLocationPage extends Form {
         recentLocation.click();
     }
     
-    @Step("Click ads cross button")
+    @Step("If find any iframe and ads close button")
     public void forIframeAndAdCloseButtonIfVisible() {
         if (adIframe.state().isExist()) {
             BrowserUtils.switchIFrame(iFrameLocator);
