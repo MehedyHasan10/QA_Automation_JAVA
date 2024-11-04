@@ -20,6 +20,11 @@ public class AccuWeatherSteps {
     public void iSearchForCity() {
         accuPage.searchForCity(cityName);
     }
+    
+    @When("I should see the result list displayed")
+    public void isSeeTheResultListDisplayed(){
+        Assert.assertTrue(accuPage.waitForResultDisplayed(),"Search results list is not displayed.");
+    }
 
     @When("I select the first search result")
     public void iSelectTheFirstSearchResult() {
@@ -27,7 +32,7 @@ public class AccuWeatherSteps {
     }
 
     @Then("I should see the city header displayed")
-    public void iShouldSeeTheCityHeaderDisplayed() {
+    public void iSSeeTheCityHeaderDisplayed() {
         Assert.assertTrue(accuPage.isCityHeaderDisplayed(), "City header is not displayed.");
     }
 }
