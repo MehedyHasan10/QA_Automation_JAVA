@@ -33,9 +33,7 @@ public class RecentLocationPage extends Form {
     public void forIframeAndAdCloseButtonIfVisible() {
         if (adIframe.state().isExist()) {
             BrowserUtils.switchIFrame(iFrameLocator);
-            if (adsCrossButton.state().isDisplayed()) {
                 adsCrossButton.click();
-            }
             BrowserUtils.switchToDefaultContent();
         }
     }

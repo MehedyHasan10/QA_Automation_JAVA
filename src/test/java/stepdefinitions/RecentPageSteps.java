@@ -22,7 +22,7 @@ public class RecentPageSteps {
     }
 
     @When("I see the result list displayed")
-    public void isSeeTheResultListDisplayed(){
+    public void isResultListDisplayed(){
        mainPage.waitForResultDisplayed();
     }
 
@@ -49,7 +49,7 @@ public class RecentPageSteps {
     }
 
     @Then ("City weather page header contains city name from the search")
-    public void isSeeCityHeaderDisplayed() {
+    public void isCityHeaderDisplayed() {
         Assert.assertTrue(recentLocationPage.isCityHeaderDisplayed(), "Header is not displayed.");
     }
 }
