@@ -20,7 +20,7 @@ public class RecentLocationPage extends Form {
     }
 
     @Step("Checking if the city header is displayed")
-    public boolean isCityHeaderDisplayed() {
+    public boolean forCityHeaderDisplayed() {
         return header.state().waitForDisplayed();
     }
 
@@ -29,8 +29,8 @@ public class RecentLocationPage extends Form {
         recentLocation.click();
     }
     
-    @Step("If find any iframe and ads close button")
-    public void forIframeAndAdCloseButtonIfVisible() {
+    @Step("If find any ads")
+    public void forAdIframe() {
         if (adIframe.state().isExist()) {
             BrowserUtils.switchIFrame(iFrameLocator);
                 adsCrossButton.click();

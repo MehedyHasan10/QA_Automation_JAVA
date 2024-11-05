@@ -33,7 +33,7 @@ public class RecentPageSteps {
     
     @Then("Back to main page")
     public void isBackToMainPage(){
-        recentLocationPage.isCityHeaderDisplayed();
+        recentLocationPage.forCityHeaderDisplayed();
         getBrowser().goBack();
         Assert.assertTrue(mainPage.state().isDisplayed(), "Main Page is not opened");
     }
@@ -45,11 +45,11 @@ public class RecentPageSteps {
 
     @Then("If I see the google ads")
     public void isClickAddCrossBtn(){
-        recentLocationPage.forIframeAndAdCloseButtonIfVisible();
+        recentLocationPage.forAdIframe();
     }
 
     @Then ("City weather page header contains city name from the search")
     public void isCityHeaderDisplayed() {
-        Assert.assertTrue(recentLocationPage.isCityHeaderDisplayed(), "Header is not displayed.");
+        Assert.assertTrue(recentLocationPage.forCityHeaderDisplayed(), "Header is not displayed.");
     }
 }

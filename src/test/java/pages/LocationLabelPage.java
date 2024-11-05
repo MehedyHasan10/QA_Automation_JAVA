@@ -21,7 +21,7 @@ public class LocationLabelPage extends Form {
     }
 
     @Step("Show the use your current location")
-    public boolean isLocationLabelDisplayed() {
+    public boolean forLocationLabelDisplayed() {
         return label.state().waitForDisplayed();
     }
 }

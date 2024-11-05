@@ -14,7 +14,7 @@ public class SearchCityPage extends Form {
     }
 
     @Step("Checking if the city header is displayed")
-    public boolean isCityHeaderDisplayed() {
+    public boolean forCityHeaderDisplayed() {
         return header.state().waitForDisplayed();
     }
 }

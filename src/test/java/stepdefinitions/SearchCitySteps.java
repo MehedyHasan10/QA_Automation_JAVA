@@ -18,7 +18,7 @@ public class SearchCitySteps {
     }
     
     @When("I should see the result list displayed")
-    public void isSeeTheResultListDisplayed(){
+    public void isResultListDisplayed(){
         Assert.assertTrue(mainPage.waitForResultDisplayed(),"Search results list is not displayed.");
     }
 
@@ -28,7 +28,7 @@ public class SearchCitySteps {
     }
 
     @Then("I should see the city header displayed")
-    public void isSeeTheCityHeaderDisplayed() {
-        Assert.assertTrue(searchCityPage.isCityHeaderDisplayed(), "City header is not displayed.");
+    public void isCityHeaderDisplayed() {
+        Assert.assertTrue(searchCityPage.forCityHeaderDisplayed(), "City header is not displayed.");
     }
 }
