@@ -10,8 +10,12 @@ public class BrowserUtils {
     public void switchToDefaultContent() {
         getBrowser().getDriver().switchTo().defaultContent();
     }
-    
-    public void switchIFrame(By iFrame){
+
+    public void switchIFrame(By iFrame) {
         getBrowser().getDriver().switchTo().frame(getBrowser().getDriver().findElement(iFrame));
+    }
+
+    public void goBackToPreviousPage() {
+        getBrowser().goBack();
     }
 }

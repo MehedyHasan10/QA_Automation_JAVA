@@ -1,10 +1,13 @@
-#Feature: Recent Locations
-#
-#  Scenario: Verify recent locations functionality on the weather application
-#    Given I search recent location
-#    When I see the result list displayed
-#    And I select the first result
-#    Then Back to main page
-#    Then I click the recent location
-#    Then If I see the google ads
-#    Then City weather page header contains city name from the search
+Feature: Search for a city and validate the results on AccuWeather page
+  As a user
+  I want to search for a city on AccuWeather
+
+  Scenario: Search for a city by search query
+    When I see consent data usage
+    When I search for the city "London"
+    And I should see the result list displayed
+    When I select the first search result
+    When I go back to the previous page
+    Then Main is open
+    When I click first recent location
+    Then I see header contains city name "London" from the search
