@@ -14,7 +14,6 @@ public class RecentLocationPage extends Form {
     private final By iFrameLocator = By.xpath("//iframe[@id='google_ads_iframe_/6581/web/gb/interstitial/news_info/country_home_0' and @title='3rd party ad content']");
     private final ILabel adIframe = getElementFactory().getLabel(iFrameLocator,"Ads Iframe");
     
-    
     public RecentLocationPage(){
         super(By.xpath("//div[@class='featured-locations']//a[1]"),"AccuWeather Main Page");
     }
