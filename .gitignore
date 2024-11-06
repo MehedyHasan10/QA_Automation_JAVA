@@ -10,11 +10,13 @@
 
 # Mac
 .DS_Store
-src/main
+
 # Maven
 log/
 target/
-src/main/java/org/example/Main.java
+
+.main/
+
 
 # Compiled class file
 *.class
