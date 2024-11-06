@@ -15,7 +15,7 @@ public class MainPage extends Form {
     private final ITextBox textInputBox = getElementFactory().getTextBox(By.xpath("//input[contains(@class,'search-input')]"), "Search Field");
     private final IButton label = getElementFactory().getButton(By.xpath("//div[@class='search-results']"), "Show Location Label");
     private final ILabel resultList = getElementFactory().getLabel(By.xpath("//div[@class='results-container']"), "Result List");
-    private final By iFrameLocator = By.xpath("//iframe[@id='google_ads_iframe_/6581/web/gb/interstitial/news_info/country_home_0' and @title='3rd party ad content']");
+    private final By iFrameLocator = By.xpath("//iframe[@title='3rd party ad content' and @data-google-container-id='4']");
     private final IButton adCrossButton = getElementFactory().getButton(By.xpath("//div[@id='dismiss-button']"), "Click ad cross button");
     private final ILabel adIframe = getElementFactory().getLabel(iFrameLocator, "Ad Iframe");
     private final By searchResultContainer = By.xpath("//div[@class='results-container']//div");
@@ -65,12 +65,12 @@ public class MainPage extends Form {
         return getElementFactory().findElements(recentResultList, ILabel.class);
     }
 
-    @Step("Clicking on the first search result")
+    @Step("Clicking on the first recent location result")
     public void clickFirstRecentLocation() {
         getRecentLocationResults().get(0).click();
     }
 
-    @Step("If find any ads")
+    @Step("If find any ad")
     public void forRemoveAds() {
         if (adIframe.state().isExist()) {
             BrowserUtils.switchIFrame(iFrameLocator);
