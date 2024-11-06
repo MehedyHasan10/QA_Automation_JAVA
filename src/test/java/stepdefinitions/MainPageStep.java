@@ -39,11 +39,11 @@ public class MainPageStep {
     @When("I select the first search result")
     public void selectFirstResult() {
         mainPage.clickFirstSearchResult();
+        searchPage.isHeaderDisplayed();
     }
 
     @When("I go back to the previous page")
     public void isBackToPreviousPage() {
-        searchPage.isHeaderDisplayed();
         BrowserUtils.goBackToPreviousPage();
     }
 

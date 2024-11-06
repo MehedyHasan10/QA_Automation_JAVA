@@ -16,7 +16,7 @@ public class MainPage extends Form {
     private final IButton label = getElementFactory().getButton(By.xpath("//div[@class='search-results']"), "Show Location Label");
     private final ILabel resultList = getElementFactory().getLabel(By.xpath("//div[@class='results-container']"), "Result List");
     private final By iFrameLocator = By.xpath("//iframe[@id='google_ads_iframe_/6581/web/gb/interstitial/news_info/country_home_0' and @title='3rd party ad content']");
-    private final IButton adsCrossButton = getElementFactory().getButton(By.xpath("//div[@id='dismiss-button']"), "Click ads cross button");
+    private final IButton adCrossButton = getElementFactory().getButton(By.xpath("//div[@id='dismiss-button']"), "Click ad cross button");
     private final ILabel adIframe = getElementFactory().getLabel(iFrameLocator, "Ad Iframe");
     private final By searchResultContainer = By.xpath("//div[@class='results-container']//div");
     private final By recentResultList = By.xpath("//div[@class='featured-locations']//a");
@@ -74,7 +74,7 @@ public class MainPage extends Form {
     public void forRemoveAds() {
         if (adIframe.state().isExist()) {
             BrowserUtils.switchIFrame(iFrameLocator);
-            adsCrossButton.click();
+            adCrossButton.click();
             BrowserUtils.switchToDefaultContent();
         }
     }

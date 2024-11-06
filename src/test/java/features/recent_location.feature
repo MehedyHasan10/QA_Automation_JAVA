@@ -1,8 +1,8 @@
-Feature: Search for a city and validate the results on AccuWeather page
+Feature: Search and view weather information for a city
   As a user
   I want to search for a city on AccuWeather
 
-  Scenario: Search for a city by search query
+  Scenario: Search for a city and verify recent locations
     When I see consent data usage
     When I search for the city "London"
     And I should see the result list displayed
