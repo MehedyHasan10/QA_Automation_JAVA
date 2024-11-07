@@ -16,7 +16,7 @@ public class MainPage extends Form {
     private final IButton label = getElementFactory().getButton(By.xpath("//div[@class='search-results']"), "Show Location Label");
     private final ILabel resultList = getElementFactory().getLabel(By.xpath("//div[@class='results-container']"), "Result List");
     private final IButton adCrossButton = getElementFactory().getButton(By.xpath("//div[@id='dismiss-button']"), "Click ad cross button");
-    private final By iFrameLocator = By.xpath("//iframe[contains(@data-google-container-id, '4')]");
+    private final By iFrameLocator = By.xpath("//iframe[@id='google_ads_iframe_/6581/web/gb/interstitial/news_info/country_home_0']");
     private final ILabel adIframe = getElementFactory().getLabel(iFrameLocator, "Ad Iframe");
     private final By searchResultContainer = By.xpath("//div[@class='results-container']//div");
     private final By recentResultList = By.xpath("//div[@class='featured-locations']//a");
