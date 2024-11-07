@@ -14,8 +14,4 @@ public class BrowserUtils {
     public void switchIFrame(By iFrame) {
         getBrowser().getDriver().switchTo().frame(getBrowser().getDriver().findElement(iFrame));
     }
-
-    public void goBackToPreviousPage() {
-        getBrowser().goBack();
-    }
 }

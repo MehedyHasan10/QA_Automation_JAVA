@@ -5,8 +5,9 @@ Feature: Search and view weather information for a city
   Scenario: Search for a city and verify recent locations
     When I see consent data usage
     When I search for the city "London"
-    And I should see the result list displayed
+    And I see the result list displayed
     When I select the first search result
+    And I see city header displayed
     When I go back to the previous page
     Then Main is open
     When I click first recent location

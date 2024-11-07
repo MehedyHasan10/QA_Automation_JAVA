@@ -4,12 +4,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.MainPage;
-import pages.SearchPage;
-import utils.BrowserUtils;
 
-public class MainPageStep {
+public class MainPageSteps {
     private final MainPage mainPage = new MainPage();
-    private final SearchPage searchPage = new SearchPage();
 
     @When("I see consent data usage")
     public void isClickAcceptConsentPolicy() {
@@ -23,7 +20,7 @@ public class MainPageStep {
 
     @Then("I see the Use your current location label displayed")
     public void isCurrentLabelDisplayed() {
-        Assert.assertTrue(mainPage.forLocationLabelDisplayed(), "Current Location Label is not displayed.");
+        Assert.assertTrue(mainPage.isLocationLabelDisplayed(), "Current Location Label is not displayed.");
     }
 
     @When("I search for the city {string}")
@@ -31,20 +28,14 @@ public class MainPageStep {
         mainPage.searchForCity(cityName);
     }
 
-    @Then("I should see the result list displayed")
+    @Then("I see the result list displayed")
     public void isResultListDisplayed() {
-        Assert.assertTrue(mainPage.forResultDisplayed(), "Search result list is not displayed.");
+        Assert.assertTrue(mainPage.isResultDisplayed(), "Search result list is not displayed.");
     }
 
     @When("I select the first search result")
     public void selectFirstResult() {
         mainPage.clickFirstSearchResult();
-        searchPage.isHeaderDisplayed();
-    }
-
-    @When("I go back to the previous page")
-    public void isBackToPreviousPage() {
-        BrowserUtils.goBackToPreviousPage();
     }
 
     @Then("Main is open")
@@ -53,7 +44,7 @@ public class MainPageStep {
     }
 
     @When("I click first recent location")
-    public void isClickedRecentLocation() {
+    public void clickRecentLocation() {
         mainPage.clickFirstRecentLocation();
         mainPage.forRemoveAds();
     }

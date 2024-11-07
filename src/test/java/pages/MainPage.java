@@ -15,8 +15,8 @@ public class MainPage extends Form {
     private final ITextBox textInputBox = getElementFactory().getTextBox(By.xpath("//input[contains(@class,'search-input')]"), "Search Field");
     private final IButton label = getElementFactory().getButton(By.xpath("//div[@class='search-results']"), "Show Location Label");
     private final ILabel resultList = getElementFactory().getLabel(By.xpath("//div[@class='results-container']"), "Result List");
-    private final By iFrameLocator = By.xpath("//iframe[@title='3rd party ad content' and @data-google-container-id='4']");
     private final IButton adCrossButton = getElementFactory().getButton(By.xpath("//div[@id='dismiss-button']"), "Click ad cross button");
+    private final By iFrameLocator = By.xpath("//iframe[contains(@data-google-container-id, '4')]");
     private final ILabel adIframe = getElementFactory().getLabel(iFrameLocator, "Ad Iframe");
     private final By searchResultContainer = By.xpath("//div[@class='results-container']//div");
     private final By recentResultList = By.xpath("//div[@class='featured-locations']//a");
@@ -36,7 +36,7 @@ public class MainPage extends Form {
     }
 
     @Step("Show the use your current location")
-    public boolean forLocationLabelDisplayed() {
+    public boolean isLocationLabelDisplayed() {
         return label.state().waitForDisplayed();
     }
 
@@ -46,7 +46,7 @@ public class MainPage extends Form {
     }
 
     @Step("Wait for result list display")
-    public boolean forResultDisplayed() {
+    public boolean isResultDisplayed() {
         return resultList.state().waitForDisplayed();
     }
 

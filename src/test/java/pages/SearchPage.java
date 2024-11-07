@@ -13,12 +13,12 @@ public class SearchPage extends Form {
     }
 
     @Step("Getting the city header text")
-    public String isCityHeaderText() {
+    public String forCityHeaderText() {
         return header.getText();
     }
 
     @Step("The city header Displayed")
-    public boolean isHeaderDisplayed() {
+    public boolean isCityHeaderDisplayed() {
         return header.state().waitForDisplayed();
     }
 }
