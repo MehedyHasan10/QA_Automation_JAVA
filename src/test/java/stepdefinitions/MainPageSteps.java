@@ -1,19 +1,22 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.MainPage;
+import pages.SearchPage;
 
 public class MainPageSteps {
     private final MainPage mainPage = new MainPage();
+    private final SearchPage searchPage = new SearchPage();
 
-    @When("I see consent data usage")
+    @When("I verify that the consent data usage pop-up is displayed")
     public void isClickAcceptConsentPolicy() {
         mainPage.acceptConsentPolicy();
     }
 
-    @When("I click the search field")
+    @And("I click the search field")
     public void isClickSearchBox() {
         mainPage.clickForSearch();
     }
@@ -35,17 +38,18 @@ public class MainPageSteps {
 
     @When("I select the first search result")
     public void selectFirstResult() {
-        mainPage.clickFirstSearchResult();
+        mainPage.clickFirstSearchResult(0);
+        searchPage.isCityHeaderDisplayed();
     }
 
-    @Then("Main is open")
+    @Then("Main Page is open")
     public void isMainPageOpen() {
         Assert.assertTrue(mainPage.state().isDisplayed(), "Main Page is not opened");
     }
 
     @When("I click first recent location")
     public void clickRecentLocation() {
-        mainPage.clickFirstRecentLocation();
+        mainPage.clickFirstRecentLocation(0);
         mainPage.forRemoveAds();
     }
 }

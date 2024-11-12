@@ -13,7 +13,7 @@ import java.util.List;
 public class MainPage extends Form {
     private final IButton policyButtonSubmit = getElementFactory().getButton(By.xpath("//div[contains(@class,'banner-button policy-accept')]"), "Submit Policy");
     private final ITextBox textInputBox = getElementFactory().getTextBox(By.xpath("//input[contains(@class,'search-input')]"), "Search Field");
-    private final IButton label = getElementFactory().getButton(By.xpath("//div[@class='search-results']"), "Show Location Label");
+    private final IButton locationLabel = getElementFactory().getButton(By.xpath("//div[@class='search-results']"), "Show Location Label");
     private final ILabel resultList = getElementFactory().getLabel(By.xpath("//div[@class='results-container']"), "Result List");
     private final IButton adCrossButton = getElementFactory().getButton(By.xpath("//div[@id='dismiss-button']"), "Click ad cross button");
     private final By iFrameLocator = By.xpath("//iframe[@id='google_ads_iframe_/6581/web/gb/interstitial/news_info/country_home_0']");
@@ -22,7 +22,8 @@ public class MainPage extends Form {
     private final By recentResultList = By.xpath("//div[@class='featured-locations']//a");
 
     public MainPage() {
-        super(By.xpath("//input[contains(@class,'search-input')]"), "AccuWeather Main Page");
+        super(By.xpath("//div[@class='template-root']"), "AccuWeather Main Page");
+
     }
 
     @Step("Click the Policy button")
@@ -37,7 +38,7 @@ public class MainPage extends Form {
 
     @Step("Show the use your current location")
     public boolean isLocationLabelDisplayed() {
-        return label.state().waitForDisplayed();
+        return locationLabel.state().waitForDisplayed();
     }
 
     @Step("Searching for city: {cityName}")
@@ -56,8 +57,8 @@ public class MainPage extends Form {
     }
 
     @Step("Clicking on the first search result")
-    public void clickFirstSearchResult() {
-        getSearchResults().get(0).click();
+    public void clickFirstSearchResult(int elementNum) {
+        getSearchResults().get(elementNum).click();
     }
 
     @Step("Retrieving the list of recent location results")
@@ -66,8 +67,8 @@ public class MainPage extends Form {
     }
 
     @Step("Clicking on the first recent location result")
-    public void clickFirstRecentLocation() {
-        getRecentLocationResults().get(0).click();
+    public void clickFirstRecentLocation(int elementNum) {
+        getRecentLocationResults().get(elementNum).click();
     }
 
     @Step("If find any ad")
