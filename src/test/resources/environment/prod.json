@@ -1,4 +1,4 @@
 {
-  "wait": 30,
+  "wait": 10,
   "host": "https://www.accuweather.com/"
 }

@@ -26,6 +26,7 @@ public class MainPageSteps {
     @When("I search for the city {string}")
     public void forSearchCity(String cityName) {
         mainPage.searchForCity(cityName);
+        mainPage.isResultDisplayed();
     }
 
     @Then("I see the result list displayed")
