@@ -9,7 +9,6 @@ import org.testng.annotations.DataProvider;
         glue = {"stepdefinitions", "hooks"},
         plugin = {"pretty"}
 )
-
 public class TestRunner extends AbstractTestNGCucumberTests {
     @Override
     @DataProvider
