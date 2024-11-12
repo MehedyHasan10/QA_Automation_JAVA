@@ -36,7 +36,7 @@ public class MainPageSteps {
     @When("I select the first search result")
     public void selectFirstResult() {
         mainPage.clickFirstSearchResult(0);
-        mainPage.isHeaderDisplayed();
+        mainPage.state().waitForNotDisplayed();
     }
 
     @Then("Main Page is open")
