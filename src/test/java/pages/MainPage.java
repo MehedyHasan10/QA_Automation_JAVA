@@ -41,7 +41,7 @@ public class MainPage extends Form {
     }
 
     @Step("Searching for city: {cityName}")
-    public void inputCityInSearchBox(String cityName) {
+    public void inputSearchCity(String cityName) {
         textInputBox.clearAndType(cityName);
     }
     

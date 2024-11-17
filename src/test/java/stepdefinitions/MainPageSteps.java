@@ -25,7 +25,7 @@ public class MainPageSteps {
 
     @When("I search for the city {string}")
     public void searchForCity(String cityName) {
-        mainPage.inputCityInSearchBox(cityName);
+        mainPage.inputSearchCity(cityName);
         mainPage.isResultListDisplayed();
     }
 
