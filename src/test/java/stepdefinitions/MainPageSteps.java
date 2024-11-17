@@ -9,33 +9,33 @@ public class MainPageSteps {
     private final MainPage mainPage = new MainPage();
 
     @When("I click on the consent data usage button")
-    public void  acceptConsentPolicy() {
+    public void acceptConsentPolicy() {
         mainPage.acceptConsentPolicy();
     }
 
     @When("I click the search field")
-    public void isClickSearchBox() {
-        mainPage.clickForSearch();
+    public void clickOnSearchBox() {
+        mainPage.clickSearchBox();
     }
-
+    
     @Then("I see the Use your current location label displayed")
     public void isCurrentLabelDisplayed() {
         Assert.assertTrue(mainPage.isLocationLabelDisplayed(), "Current Location Label is not displayed.");
     }
 
     @When("I search for the city {string}")
-    public void forSearchCity(String cityName) {
-        mainPage.searchForCity(cityName);
-        mainPage.isResultDisplayed();
+    public void searchForCity(String cityName) {
+        mainPage.inputCityInSearchBox(cityName);
+        mainPage.isResultListDisplayed();
     }
 
     @Then("I see the result list displayed")
     public void isResultListDisplayed() {
-        Assert.assertTrue(mainPage.isResultDisplayed(), "Search result list is not displayed.");
+        Assert.assertTrue(mainPage.isResultListDisplayed(), "Search result list is not displayed.");
     }
 
     @When("I select the first search result")
-    public void selectFirstResult() {
+    public void clickOnFirstSearchResult() {
         mainPage.clickFirstSearchResult(0);
         mainPage.state().waitForNotDisplayed();
     }
@@ -46,7 +46,7 @@ public class MainPageSteps {
     }
 
     @When("I click first recent location")
-    public void clickRecentLocation() {
+    public void clickOnFirstRecentLocation() {
         mainPage.clickFirstRecentLocation(0);
         mainPage.forRemoveAds();
     }

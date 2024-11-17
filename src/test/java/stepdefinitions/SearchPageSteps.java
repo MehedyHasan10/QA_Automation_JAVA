@@ -8,7 +8,7 @@ public class SearchPageSteps {
     private final SearchPage searchPage = new SearchPage();
 
     @When("I see header contains city name {string} from the search")
-    public void isCityHeaderText(String cityName) {
-        Assert.assertTrue(searchPage.forCityHeaderText().toLowerCase().contains(cityName.toLowerCase()), "City weather page header does not contain the city name from the search.");
+    public void getCityHeaderText(String cityName) {
+        Assert.assertTrue(searchPage.getCityHeaderText().toLowerCase().contains(cityName.toLowerCase()), "City weather page header does not contain the city name from the search.");
     }
 }

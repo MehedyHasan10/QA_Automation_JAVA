@@ -13,7 +13,7 @@ public class SearchPage extends Form {
     }
 
     @Step("Getting the city header text")
-    public String forCityHeaderText() {
+    public String getCityHeaderText(){
         return header.getText();
     }
 }
