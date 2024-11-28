@@ -1,0 +1,15 @@
+userName: 
+accessKey: 
+platforms:
+  - os: Windows
+    osVersion: 10
+    browserName: Chrome
+    browserVersion: 120.0
+  - os: OS X
+    osVersion: Monterey
+    browserName: Safari
+    browserVersion: 15.6
+    deviceOrientation: portrait
+browserstackLocal: false
+buildName: browserstack-build-1
+projectName: BrowserStack Sample
