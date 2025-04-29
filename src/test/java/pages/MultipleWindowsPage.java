@@ -4,6 +4,7 @@ import aquality.selenium.elements.interfaces.IButton;
 import aquality.selenium.elements.interfaces.ILabel;
 import aquality.selenium.forms.Form;
 import constants.LocatorConstants;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public class MultipleWindowsPage extends Form {
@@ -15,10 +16,12 @@ public class MultipleWindowsPage extends Form {
         super(By.xpath(String.format(LocatorConstants.PRECISE_TEXT_XPATH, PAGE_NAME)), PAGE_NAME);
     }
 
+    @Step("Click on the 'Click Here' link")
     public void clickClickHereLink() {
         clickHereLinkBtn.click();
     }
 
+    @Step("Get the header text on the Multiple Windows page")
     public String getHeaderText() {
         return headerLabel.getText();
     }

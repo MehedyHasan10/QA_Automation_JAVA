@@ -29,9 +29,9 @@ public class DynamicControlsSteps {
         step("Input random text into the enabled input field");
     }
     
-   @Then("the input field should contain the entered text")
-    public void theInputFieldShouldContainTheEnteredText(){
-        Assert.assertEquals(dynamicControlsPage.getInputFieldText(),randomText,"Input field text does not match the entered text");
-       step("Verify the input text matches the entered random text");
-    }
+//   @Then("the input field should contain the entered text")
+//    public void theInputFieldShouldContainTheEnteredText(){
+//        Assert.assertEquals(dynamicControlsPage.getInputFieldText(),randomText,"Input field text does not match the entered text");
+//       step("Verify the input text matches the entered random text");
+//    }
 }

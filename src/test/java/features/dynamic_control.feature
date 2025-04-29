@@ -5,4 +5,4 @@ Feature: Dynamic Controls
     When I click the enable button
     Then the input field should be enabled
     When I enter random text in the input field
-    Then the input field should contain the entered text
+

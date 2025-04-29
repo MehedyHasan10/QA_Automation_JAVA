@@ -3,6 +3,7 @@ package pages;
 import aquality.selenium.elements.interfaces.*;
 import aquality.selenium.forms.Form;
 import constants.LocatorConstants;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public class FileUploadPage extends Form {
@@ -15,11 +16,13 @@ public class FileUploadPage extends Form {
     public FileUploadPage() {
         super(By.xpath(String.format(LocatorConstants.PRECISE_TEXT_XPATH, NAME)), NAME);
     }
-    
+
+    @Step("Upload a file with path: {filePath}")
     public void uploadFile(String filePath) {
         fileNameInput.clearAndType(filePath);
     }
-    
+
+    @Step("Click the submit button to upload the file")
     public void clickSubmitBtn() {
         fileSubmitBtn.click();
     }
