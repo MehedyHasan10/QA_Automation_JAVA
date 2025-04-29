@@ -34,8 +34,8 @@ public abstract class BaseTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(MAX_WAIT));
     }
 
-//    @AfterMethod
-//    public void teardown() {
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void teardown() {
+        driver.quit();
+    }
 }
