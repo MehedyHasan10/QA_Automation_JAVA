@@ -21,7 +21,6 @@
             <artifactId>selenium-java</artifactId>
             <version>4.24.0</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
@@ -29,8 +28,6 @@
             <version>7.10.2</version>
             <scope>test</scope>
         </dependency>
-
-
         <!-- https://mvnrepository.com/artifact/org.awaitility/awaitility -->
         <dependency>
             <groupId>org.awaitility</groupId>
@@ -38,12 +35,6 @@
             <version>4.2.0</version>
             <scope>test</scope>
         </dependency>
-
-
-
-
-
     </dependencies>
-
-
+    
 </project>
