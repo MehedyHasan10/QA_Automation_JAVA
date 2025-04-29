@@ -1,0 +1,24 @@
+package Exceptions;
+
+public class Null_Exception {
+    public static void main(String[] args){
+//        try{
+//            String name = null;
+//            System.out.println(name.charAt(0));
+//        } catch (NullPointerException e) {
+//            System.out.println("Exception:"+e);
+//        }
+        try{
+            int a = 10;
+            int b = 0;
+            int result = a/b;
+            System.out.println(result);
+        }catch(ArithmeticException |NullPointerException e){
+            throw new RuntimeException(e) ;
+        } finally {
+            System.out.println("Finally block");
+        }
+    }
+}
+
+

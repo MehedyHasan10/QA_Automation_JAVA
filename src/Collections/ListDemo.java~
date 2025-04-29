@@ -1,0 +1,27 @@
+package Collections;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class ListDemo {
+    public static void main(String[] args){
+        List<Integer> numbers = new ArrayList<>();
+        for(int i=1;i<=20;i++){
+            numbers.add(i);
+        }
+        
+//        System.out.println("Even numbers");
+//        for(int number : numbers){
+//            if(number%2==0){
+//                System.out.println(number);
+//            }
+//        }
+
+        List<Integer> evenNumbers = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .collect(Collectors.toList());
+        System.out.println("Even Numbers: " + evenNumbers);
+        
+    }
+}

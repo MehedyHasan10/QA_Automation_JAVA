@@ -1,0 +1,17 @@
+package partADemo;
+
+public class VarargsExample {
+    // A method that takes varargs of different types
+    public static void printItems(String... items) {
+        for (String item : items) {
+            System.out.println(item);
+        }
+    }
+
+    public static void main(String[] args) {
+        printItems("Apple", "Banana", "Orange");
+        printItems("Apple","Banana");
+        printItems("Grapes");
+        printItems(); 
+    }
+}

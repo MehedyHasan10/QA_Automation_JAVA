@@ -1,0 +1,30 @@
+package AnimalsProject;
+
+public class Animal {
+    public int age;
+    public double weight;
+    
+    public Animal(){
+        
+    }
+    
+    public Animal(int age,double weight){
+        this.age = age;
+        this.weight = weight;
+    }
+    
+    public void eatFood(){
+        System.out.println("Animal is eating food");
+    }
+    
+    public void printInfo(){
+        System.out.println("My age is:"+age);
+        System.out.println("My weight is:"+weight);
+        System.out.println("_____________________");
+    }
+    public void printInfo(int age,double weight){
+        System.out.println("My age is:"+age);
+        System.out.println("My weight is:"+weight);
+        
+    }
+}
