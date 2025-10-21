@@ -1,2 +1,4 @@
 README.md
-<img width="868" height="566" alt="image" src="https://github.com/user-attachments/assets/95ad31a1-7b01-45b4-aacb-e59e0d749801" />
+Click main
+<img width="1321" height="561" alt="image" src="https://github.com/user-attachments/assets/a5d0f5b4-4046-4f19-891a-5ca118d1abf2" />
+
